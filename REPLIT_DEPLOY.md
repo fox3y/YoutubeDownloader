@@ -1,115 +1,46 @@
-# Deploy no Replit - VideoFlow
+# Deploy com Ngrok - VideoFlow
 
-## 🚀 Como fazer deploy no Replit (Gratuito com HTTPS)
+## 🚀 Como usar Ngrok (Mais simples, sem cadastro)
 
-### Passo 1: Criar conta no Replit
+### Passo 1: Baixar ngrok
+1. Acesse https://ngrok.com/download
+2. Baixe para Windows
+3. Extraia o arquivo zip
 
-1. Acesse https://replit.com
-2. Clique em "Sign up"
-3. Crie uma conta gratuita
-
-### Passo 2: Criar novo Repl
-
-1. Clique em "+ Create Repl"
-2. Selecione "Import from GitHub"
-3. Cole: `https://github.com/fox3y/YoutubeDownloader`
-4. Clique em "Import"
-
-### Passo 3: Configurar o Replit
-
-O Replit vai detectar automaticamente os arquivos de configuração:
-- `.replit` - Configuração de execução
-- `replit.nix` - Dependências do sistema
-
-### Passo 4: Rodar o projeto
-
-1. Clique no botão verde "Run"
-2. O Replit vai:
-   - Instalar Node.js
-   - Instalar FFmpeg
-   - Instalar yt-dlp via pip
-   - Buildar o projeto TypeScript
-   - Iniciar o servidor
-
-### Passo 5: Acessar a aplicação
-
-1. O Replit vai mostrar uma URL tipo:
-   `https://youtubedownloader-fox3y.replit.co`
-
-2. Esta URL já tem:
-   - ✅ HTTPS automático
-   - ✅ Acesso público
-   - ✅ Domínio gratuito
-
-### Passo 6: Compartilhar
-
-A URL do Replit pode ser compartilhada diretamente:
-- `https://youtubedownloader-fox3y.replit.co`
-
-## ⚠️ Limitações do plano gratuito
-
-- **Recursos**: CPU e RAM limitados
-- **Sleep**: O projeto "dorme" após inatividade
-- **Reativação**: Demora alguns segundos para acordar
-- **Timeout**: Downloads muito longos podem ser interrompidos
-
-## 💡 Alternativa: Ngrok (Mais rápido)
-
-Se quiser algo mais rápido para testar:
-
-### 1. Instalar ngrok
-- Baixe de https://ngrok.com/download
-- Extraia e rode o executável
-
-### 2. Rodar localmente
+### Passo 2: Rodar o projeto localmente
 ```bash
-cd VideoFlow
+cd C:\Users\Usuario\VideoFlow
 npm run dev
 ```
 
-### 3. Iniciar ngrok
+### Passo 3: Iniciar ngrok
+Em outro terminal:
 ```bash
+cd C:\Users\Usuario\VideoFlow
 ngrok http 8083
 ```
 
-### 4. Usar a URL
-O ngrok vai gerar uma URL tipo:
-`https://abc123.ngrok.io`
+### Passo 4: Usar a URL gerada
+O ngrok vai mostrar uma URL tipo:
+```
+https://abc123-def456.ngrok-free.app
+```
 
 Esta URL:
-- ✅ É gratuita
-- ✅ Tem HTTPS
-- ✅ Funciona imediatamente
-- ✅ Usa os recursos da sua máquina
+- ✅ É pública e acessível de qualquer lugar
+- ✅ Tem HTTPS automático
+- ✅ Não precisa de cadastro
+- ✅ Usa recursos da sua máquina
 - ❌ Precisa da sua máquina ligada
 
-## 🎯 Recomendação
+## ⚠️ Limitações
+- A URL muda cada vez que você reinicia o ngrok
+- Precisa manter o projeto rodando localmente
+- Não funciona se desligar o computador
 
-**Para testar rápido:** Ngrok (5 minutos)
-**Para hosting estável:** Replit (10 minutos)
-
-## 🔧 Solução de problemas
-
-### Se o Replit não iniciar:
-1. Verifique o console por erros
-2. Tente rodar manualmente no Shell do Replit:
-   ```bash
-   pip install yt-dlp
-   npm install
-   npm run build
-   npm start
-   ```
-
-### Se yt-dlp não funcionar:
-No Shell do Replit:
-```bash
-pip install --user yt-dlp
-export PATH=$PATH:~/.local/bin
-```
-
-### Se FFmpeg não funcionar:
-No Shell do Replit:
-```bash
-apt-get update
-apt-get install -y ffmpeg
-```
+## 💡 Se quiser hosting estável (grátis)
+Use Railway (https://railway.app):
+1. Login com GitHub
+2. New Project → Deploy from GitHub
+3. Selecione `fox3y/YoutubeDownloader`
+4. Deploy automático
