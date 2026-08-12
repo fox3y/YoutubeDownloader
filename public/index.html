@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoFlow - Baixe seus vídeos favoritos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="logo">
+                <h1>VideosDownloads</h1>
+                <p class="subtitle">Baixe seus vídeos favoritos</p>
+                <p class="sub-subtitle">Rápido, simples e direto.</p>
+            </div>
+
+            <form id="downloadForm" class="form">
+                <div class="input-group">
+                    <input 
+                        type="url" 
+                        id="url" 
+                        placeholder="Cole a URL do vídeo" 
+                        required
+                        autocomplete="off"
+                    >
+                    <div class="input-icon">🔗</div>
+                </div>
+
+                <div class="quality-group">
+                    <label class="quality-label">Selecione a qualidade:</label>
+                    <div class="quality-options">
+                        <label class="quality-option">
+                            <input type="radio" name="quality" value="360">
+                            <span>360p</span>
+                        </label>
+                        <label class="quality-option">
+                            <input type="radio" name="quality" value="480">
+                            <span>480p</span>
+                        </label>
+                        <label class="quality-option">
+                            <input type="radio" name="quality" value="720" checked>
+                            <span>720p</span>
+                        </label>
+                        <label class="quality-option">
+                            <input type="radio" name="quality" value="1080">
+                            <span>1080p</span>
+                        </label>
+                        <label class="quality-option">
+                            <input type="radio" name="quality" value="1440">
+                            <span>1440p</span>
+                        </label>
+                        <label class="quality-option">
+                            <input type="radio" name="quality" value="2160">
+                            <span>4K</span>
+                        </label>
+                        <label class="quality-option">
+                            <input type="radio" name="quality" value="mp3">
+                            <span>MP3</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" id="downloadBtn" class="download-btn">
+                    <span class="btn-text">Baixar</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+
+            <div id="status" class="status hidden">
+                <div class="status-icon"></div>
+                <div class="status-message"></div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 - Olinuh | DevOps & Backend Engineer.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
