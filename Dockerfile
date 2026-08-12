@@ -39,6 +39,9 @@ RUN npm install --production && npm cache clean --force
 # Copy built files from builder
 COPY --from=builder /app/dist ./dist
 
+# Copy public files (frontend)
+COPY public ./public
+
 # Create downloads directory
 RUN mkdir -p /app/downloads
 
