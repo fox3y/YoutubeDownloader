@@ -1,7 +1,7 @@
 # Replit configuration for VideoFlow
 
 [run]
-start = "pip install yt-dlp && npm run build && npm start"
+start = "npm install && npm run build && npm start"
 
 [env]
 PORT = "8080"
