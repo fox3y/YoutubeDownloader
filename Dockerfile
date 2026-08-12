@@ -33,8 +33,8 @@ RUN apk add --no-cache \
 # Copy package files
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm install --omit=dev && npm cache clean --force
+# Install dependencies
+RUN npm install --production && npm cache clean --force
 
 # Copy built files from builder
 COPY --from=builder /app/dist ./dist
